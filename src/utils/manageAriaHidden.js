@@ -15,16 +15,16 @@ let siblings = (container, exclude, cb) => {
 export function ariaHidden(show, node) {
   if (!node) return
   if (show) {
-    node.setAttribute('aria-hidden', 'true')
+    // node.setAttribute('aria-hidden', 'true')
   } else {
-    node.removeAttribute('aria-hidden')
+    // node.removeAttribute('aria-hidden')
   }
 }
 
 export function hideSiblings(container, { root, backdrop }) {
-  siblings(container, [root, backdrop], node => ariaHidden(true, node))
+  // siblings(container, [root, backdrop], node => ariaHidden(true, node))
 }
 
 export function showSiblings(container, { root, backdrop }) {
-  siblings(container, [root, backdrop], node => ariaHidden(false, node))
+  // siblings(container, [root, backdrop], node => ariaHidden(false, node))
 }

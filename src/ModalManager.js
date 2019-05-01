@@ -89,7 +89,7 @@ class ModalManager {
     this.modals.push(modal)
 
     if (this.hideSiblingNodes) {
-      hideSiblings(container, modal)
+      hideSiblings(container, modal.dialog)
     }
 
     if (containerIdx !== -1) {
@@ -141,7 +141,7 @@ class ModalManager {
       }
 
       if (this.hideSiblingNodes) {
-        showSiblings(container, modal)
+        showSiblings(container, modal.dialog)
       }
       this.containers.splice(containerIdx, 1)
       this.data.splice(containerIdx, 1)

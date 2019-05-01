@@ -4,8 +4,8 @@ let isHidable = ({ nodeType, tagName }) =>
   nodeType === 1 && BLACKLIST.indexOf(tagName.toLowerCase()) === -1
 
 let siblings = (container, exclude, cb) => {
-  exclude = [].concat(exclude)
-  ;[].forEach.call(container.children, node => {
+  exclude = [].concat(exclude);
+  [].forEach.call(container.children, node => {
     if (exclude.indexOf(node) === -1 && isHidable(node)) {
       cb(node)
     }
@@ -21,10 +21,10 @@ export function ariaHidden(show, node) {
   }
 }
 
-export function hideSiblings(container, { root, backdrop }) {
-  // siblings(container, [root, backdrop], node => ariaHidden(true, node))
+export function hideSiblings(container, modalRoot) {
+  siblings(container, [modalRoot], node => ariaHidden(true, node))
 }
 
-export function showSiblings(container, { root, backdrop }) {
-  // siblings(container, [root, backdrop], node => ariaHidden(false, node))
+export function showSiblings(container, modalRoot) {
+  siblings(container, [modalRoot], node => ariaHidden(false, node))
 }

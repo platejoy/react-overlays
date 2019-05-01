@@ -22,9 +22,9 @@ export function ariaHidden(show, node) {
 }
 
 export function hideSiblings(container, { root, backdrop }) {
-  siblings(container, [root, backdrop], node => ariaHidden(true, node))
+  // siblings(container, [root, backdrop], node => ariaHidden(true, node))
 }
 
 export function showSiblings(container, { root, backdrop }) {
-  siblings(container, [root, backdrop], node => ariaHidden(false, node))
+  // siblings(container, [root, backdrop], node => ariaHidden(false, node))
 }
